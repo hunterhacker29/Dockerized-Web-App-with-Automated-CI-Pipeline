@@ -3,31 +3,33 @@ provider "aws" {
 }
 
 # -------------------------------
-# Security Group (SECURED – AI FIX)
+# Secure Security Group (AI Remediated)
 # -------------------------------
 resource "aws_security_group" "secure_sg" {
   name        = "secure-ssh-sg"
-  description = "Security group hardened using AI recommendations"
+  description = "Security group secured using AI recommendations"
 
-  # ✅ FIX 1: Restrict SSH access (replace with YOUR public IP)
+  # ✅ Restrict SSH to YOUR public IP only
   ingress {
-    description = "SSH access (RESTRICTED)"
+    description = "SSH access (restricted)"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["YOUR_PUBLIC_IP/32"]
+    cidr_blocks = ["45.115.55.174/32"]
   }
 
-  # HTTP access for app
+  # ✅ Allow HTTP (for app access)
   ingress {
+    description = "HTTP access"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # ✅ FIX 2: Restrict outbound traffic (HTTPS only)
+  # ✅ Restrict outbound traffic (HTTPS only)
   egress {
+    description = "Allow outbound HTTPS only"
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
@@ -36,7 +38,7 @@ resource "aws_security_group" "secure_sg" {
 }
 
 # -------------------------------
-# EC2 Instance (SECURED – AI FIX)
+# Secure EC2 Instance (AI Remediated)
 # -------------------------------
 resource "aws_instance" "devops_vm" {
   ami           = var.ami_id
@@ -45,17 +47,17 @@ resource "aws_instance" "devops_vm" {
 
   security_groups = [aws_security_group.secure_sg.name]
 
-  # ✅ FIX 3: Enforce IMDSv2
+  # ✅ Enforce IMDSv2
   metadata_options {
     http_tokens = "required"
   }
 
-  # ✅ FIX 4: Encrypt root volume
+  # ✅ Encrypt root volume
   root_block_device {
     encrypted = true
   }
 
   tags = {
-    Name = "DevOps-Secured-VM"
+    Name = "DevOps-Secure-VM"
   }
 }
