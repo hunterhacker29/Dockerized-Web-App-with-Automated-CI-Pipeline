@@ -135,9 +135,10 @@ This screenshot shows the Jenkins pipeline failing due to infrastructure securit
 Console output from Jenkins showing Trivy-detected security vulnerabilities in Terraform configuration.
 
 📸 **Upload Screenshot Here**  
-[ Trivy Vulnerability Report – Before Fix ]
-
-
+<img width="1920" height="1080" alt="Screenshot (615)" src="https://github.com/user-attachments/assets/50c2759f-392e-4c17-a491-cd68dc1cd19a" />
+<img width="1920" height="1080" alt="Screenshot (618)" src="https://github.com/user-attachments/assets/3552357e-e6c8-44c0-b7d8-fe36d859e6e5" />
+<img width="1920" height="1080" alt="Screenshot (619)" src="https://github.com/user-attachments/assets/d3611770-1f45-4a16-af8e-8ce5a470c9ca" />
+<img width="1474" height="736" alt="image" src="https://github.com/user-attachments/assets/7b235374-219e-48c8-b040-3151fc3e62a6" />
 
 ---
 
@@ -147,10 +148,9 @@ Console output from Jenkins showing Trivy-detected security vulnerabilities in T
 This screenshot confirms that after applying AI-recommended fixes, the Jenkins pipeline completed successfully with no HIGH or CRITICAL issues.
 
 📸 **Upload Screenshot Here**  
-[ Jenkins Successful Pipeline Screenshot ]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9edcfa8e-0674-49a9-8139-be3487dccf4b" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2d98111a-665b-4ae1-a75a-3b93107ee729" />
 
-yaml
-Copy code
 
 ---
 
@@ -160,10 +160,14 @@ Copy code
 Final Trivy scan output showing zero critical or high-severity vulnerabilities after securing the infrastructure.
 
 📸 **Upload Screenshot Here**  
-[ Trivy Report – After Fix ]
+<img width="1416" height="670" alt="image" src="https://github.com/user-attachments/assets/0a97476f-e2e0-4b30-a544-c2a065aceca2" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8c58d223-d16c-4ff5-a5f0-722053e47c60" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c28609df-18d4-4a6a-b9e8-9764d3a1a26b" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ba150bb3-b41c-4036-b65c-e53e2045b983" />
 
-yaml
-Copy code
+
+
+
 
 ---
 
@@ -175,8 +179,9 @@ Proof that the application is successfully deployed and accessible via cloud hos
 📸 **Upload Screenshot Here**  
 [ Application Running on Cloud Public IP / Domain ]
 
-yaml
-Copy code
+<img width="1920" height="1080" alt="Screenshot (625)" src="https://github.com/user-attachments/assets/c9a3bb4e-c4b5-4a0b-97ed-cd9d9ae624db" />
+![Uploading Screenshot (626).png…]()
+<img width="1920" height="1080" alt="Screenshot (627)" src="https://github.com/user-attachments/assets/ac301a55-24fb-46fa-bcf1-a500dc49b910" />
 
 ---
 
@@ -185,8 +190,7 @@ Copy code
 ### 🔹 Exact AI Prompt Used
 Analyze the following Trivy security scan results for Terraform AWS infrastructure and suggest secure configuration changes to remediate all HIGH and CRITICAL vulnerabilities while following AWS security best practices.
 
-markdown
-Copy code
+
 
 ### 🔹 Summary of Identified Risks
 - Public SSH access allowing brute-force attacks
@@ -201,42 +205,8 @@ Copy code
 - Controlled outbound traffic limited unauthorized data flow
 
 ---
-
-## 📦 Submission Checklist
-
-This GitHub repository contains:
-
-- ✅ Source code & Docker files
-- ✅ Jenkins Pipeline configuration
-- ✅ `terraform/` directory (secured version)
-- ✅ README.md with GenAI Usage Report
-- ✅ **Video Recording (5–10 minutes)**  
-  - Jenkins pipeline execution  
-  - Trivy security scans  
-  - Terraform plan  
-  - Application running on cloud public IP  
-
 🎥 **Video Demo Link:**  
 [ Add Video Recording Link Here ]
-
-yaml
-Copy code
-
----
-
-## ⏳ Timeline
-
-**Project Duration:** 5 Days
-
----
-
-## 🧪 Evaluation Criteria Mapping
-
-- **Pipeline Automation:** Jenkins successfully pulls code and runs Trivy scans  
-- **Security Awareness:** Clear identification and remediation of cloud vulnerabilities  
-- **AI Utilization:** Verified through AI Usage Log and remediation steps  
-- **Cloud Deployment:** Application accessible via public domain/IP  
-
 ---
 
 ## 👤 Author
@@ -249,5 +219,6 @@ Copy code
 
 This project showcases a real-world DevOps workflow where infrastructure security is integrated directly into the CI/CD pipeline.  
 It highlights how **AI-assisted remediation** can effectively improve cloud security while maintaining automation and delivery speed.
+
 
 
