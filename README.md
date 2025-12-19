@@ -1,38 +1,31 @@
-✅ What we will do
-
-We will:
-
-Remove conflict markers
-
-Merge both meanings
-
-MovieMate project description
-
-DevOps / CI-CD / Terraform / Jenkins context
-
-Produce one clean, professional README
-
-You can paste this directly into GitHub → README.md → Edit → Commit.
-
-✅ FINAL CLEAN README (COPY–PASTE THIS)
 # 🎬 MovieMate – Dockerized Web App with Automated CI/CD & AI-Driven Security
 
-**MovieMate** is an ad-free OTT-style web application that aggregates movies and TV shows into a single streaming platform.  
-This project demonstrates **end-to-end DevOps practices**, including **Dockerization**, **Infrastructure as Code (Terraform)**, **CI/CD with Jenkins**, **security scanning using Trivy**, and **AI-driven remediation of infrastructure vulnerabilities**.
+MovieMate is an ad-free OTT-style web application that aggregates movies and TV shows into a single streaming platform.
+
+This project demonstrates **end-to-end DevOps practices**, including:
+- Dockerized application
+- Infrastructure as Code using Terraform
+- CI/CD automation with Jenkins
+- Infrastructure security scanning using Trivy
+- AI-driven remediation of cloud security vulnerabilities
 
 ---
 
-## 🚀 Application Overview
+## 🚀 Live Application
 
-MovieMate provides a seamless entertainment experience with modern UI and secure backend services.
+🌐 **Deployed URL:**  
+https://movieweb-f2893.web.app/
 
-### ✨ Features
+---
+
+## ✨ Application Features
+
 - Unified access to movies and TV shows
 - Ad-free viewing experience
-- Responsive React-based frontend
-- Firebase authentication (Email/Password + Google OAuth)
+- Responsive React-based UI
+- Firebase Authentication (Email/Password + Google OAuth)
 - User profile management
-- Infinite scrolling and dynamic content loading
+- Dynamic content loading with infinite scroll
 
 ---
 
@@ -46,120 +39,88 @@ MovieMate provides a seamless entertainment experience with modern UI and secure
 - **Hosting:** Firebase Hosting
 
 ### DevOps & Cloud
-- **Containerization:** Docker + Nginx
-- **CI/CD:** Jenkins (running via Docker)
-- **Infrastructure as Code:** Terraform (AWS EC2)
+- **Containerization:** Docker
+- **CI/CD:** Jenkins (Docker-based)
+- **Infrastructure as Code:** Terraform
 - **Security Scanning:** Trivy
 - **Cloud Provider:** AWS (EC2, Security Groups)
 
 ---
 
-## 🧩 DevOps Architecture
+## 🧩 CI/CD Pipeline Architecture
 
+Developer
+↓
+GitHub Repository
+↓
+Jenkins Pipeline
+├── Checkout Source Code
+├── Trivy Infrastructure Security Scan
+└── Terraform Plan (Dry Run)
 
-
-Developer → GitHub → Jenkins Pipeline
-├── Trivy Security Scan
-├── Terraform Plan
-└── Deployment Validation
-
+yaml
+Copy code
 
 ---
 
 ## 🔐 Infrastructure Security (Assignment Focus)
 
 ### ❌ Initial (Intentionally Insecure)
-- SSH (22) open to `0.0.0.0/0`
+- SSH (port 22) open to `0.0.0.0/0`
 - Unrestricted outbound traffic
 - Root volume not encrypted
 - IMDSv2 not enforced
 
-These vulnerabilities were **intentionally introduced** to demonstrate detection and remediation.
+These vulnerabilities were **intentionally introduced** for security testing.
 
 ---
 
 ## 🤖 AI-Driven Security Remediation
 
-Security issues were detected using **Trivy** in the Jenkins pipeline.  
-Based on AI recommendations, the Terraform code was updated to:
+Using Trivy scan results from the Jenkins pipeline, AI-based recommendations were applied to fix the vulnerabilities:
 
-- ✅ Restrict SSH access to a specific IP
-- ✅ Encrypt root block storage
-- ✅ Enforce IMDSv2 metadata tokens
-- ✅ Restrict outbound traffic to HTTPS only
+- ✅ SSH restricted to a specific public IP
+- ✅ Root block storage encrypted
+- ✅ IMDSv2 enforced
+- ✅ Outbound traffic restricted to HTTPS only
 
-After remediation, the Jenkins pipeline was re-run and **zero critical/high vulnerabilities were detected**.
+After remediation:
+- Trivy scan reports **zero HIGH or CRITICAL issues**
+- Jenkins pipeline completes successfully
 
 ---
 
-## 🔁 CI/CD Pipeline Stages
+## 🔁 Jenkins Pipeline Stages
 
-1. **Checkout** – Pull source code from GitHub
-2. **Infrastructure Security Scan** – Trivy scan on Terraform code
-3. **Terraform Plan** – Validate infrastructure changes
+1. **Checkout** – Pull code from GitHub
+2. **Infrastructure Security Scan** – Trivy scans Terraform files
+3. **Terraform Plan** – Dry run to validate infrastructure
+
+> Terraform apply is intentionally not executed due to missing AWS credentials in Jenkins.
 
 ---
 
 ## 🖼️ Screenshots
 
-*(Add Jenkins success screenshots, Trivy reports, and UI images here)*
+- Application UI
+- Jenkins pipeline execution
+- Trivy vulnerability reports (before & after remediation)
+
+*(Screenshots included in submission)*
 
 ---
 
-## ▶️ Running Locally
+## ▶️ Run Locally
 
 ```bash
 npm install
 npm start
-
-
 App runs at:
-
 http://localhost:3000
 
-🌐 Live Deployment
-
-🔗 https://movieweb-f2893.web.app/
-
 👤 Author
-
 Advait Jadhav
 
 📌 Conclusion
-
-This project demonstrates how modern DevOps pipelines integrate security, automation, and cloud infrastructure, showcasing real-world CI/CD workflows with AI-assisted remediation.
-
-
----
-
-## ✅ What to do NOW (VERY IMPORTANT)
-
-### 👉 Go to GitHub
-1. Open your repo
-2. Open **README.md**
-3. Click ✏️ **Edit**
-4. **Replace everything** with the content above
-5. Commit with message:
-
-
-Fix README conflict and document DevOps pipeline
-
-
----
-
-## 🎯 Result
-- ✅ No merge conflict
-- ✅ Professional README
-- ✅ Matches assignment perfectly
-- ✅ Jenkins can pull cleanly
-- ✅ You can submit confidently
-
----
-
-If you want next:
-- 📄 **Final documentation (report format)**
-- 📊 **Architecture diagram**
-- 🎤 **Interview explanation**
-- 📸 **Which screenshots to submit**
-
-Just tell me 👍
+This project showcases a real-world DevOps workflow where infrastructure security is integrated into CI/CD pipelines.
+It demonstrates how AI-assisted remediation can improve cloud security while maintaining automated delivery pipelines.
