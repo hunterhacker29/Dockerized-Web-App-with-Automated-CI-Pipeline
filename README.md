@@ -16,6 +16,9 @@ This project demonstrates **end-to-end DevOps practices**, including:
 🌐 **Deployed URL:**  
 https://movieweb-f2893.web.app/
 
+<img width="1919" height="995" alt="image" src="https://github.com/user-attachments/assets/d06cd69c-f079-4637-95f4-aa70322147f7" />
+<img width="1920" height="1080" alt="Screenshot (612)" src="https://github.com/user-attachments/assets/d146f693-89f3-4ffb-81b5-2a03f93e2886" />
+
 ---
 
 ## ✨ Application Features
@@ -124,5 +127,6 @@ Advait Jadhav
 📌 Conclusion
 This project showcases a real-world DevOps workflow where infrastructure security is integrated into CI/CD pipelines.
 It demonstrates how AI-assisted remediation can improve cloud security while maintaining automated delivery pipelines.
+
 
 
