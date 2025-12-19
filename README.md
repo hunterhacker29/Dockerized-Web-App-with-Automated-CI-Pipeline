@@ -17,6 +17,13 @@ This project demonstrates **end-to-end DevOps practices**, including:
 🌐 **Deployed URL:**  
 https://movieweb-f2893.web.app/
 
+Screenshots:
+<img width="1920" height="1080" alt="Screenshot (609)" src="https://github.com/user-attachments/assets/86778c61-c793-4f5e-9503-2d72e3ac52ca" />
+<img width="1920" height="1080" alt="Screenshot (610)" src="https://github.com/user-attachments/assets/f8b6a1e6-1664-41ce-a7e5-11a1264cdfb4" />
+<img width="1920" height="1080" alt="Screenshot (611)" src="https://github.com/user-attachments/assets/3be064af-e70d-4680-9a9c-6014559d6442" />
+
+
+
 ---
 
 ## ✨ Application Features
@@ -130,8 +137,7 @@ Console output from Jenkins showing Trivy-detected security vulnerabilities in T
 📸 **Upload Screenshot Here**  
 [ Trivy Vulnerability Report – Before Fix ]
 
-yaml
-Copy code
+
 
 ---
 
@@ -243,4 +249,5 @@ Copy code
 
 This project showcases a real-world DevOps workflow where infrastructure security is integrated directly into the CI/CD pipeline.  
 It highlights how **AI-assisted remediation** can effectively improve cloud security while maintaining automation and delivery speed.
+
 
