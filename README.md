@@ -61,7 +61,7 @@ https://movieweb-f2893.web.app/
 - Login Page (Firebase Authentication)
 - Home Page with Movie Cards
 
-```text
+
 [Insert Application UI screenshots here]
 🧩 Architecture Overview
 High-Level Flow
@@ -239,6 +239,7 @@ Maintain secure, automated infrastructure delivery
 2. **Replace everything** with the above content
 3. Commit with message:
 Add final README with DevOps architecture, security reports, and AI remediation
+
 
 
 
