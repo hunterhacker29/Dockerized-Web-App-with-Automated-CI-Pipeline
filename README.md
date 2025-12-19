@@ -114,10 +114,11 @@ This screenshot shows the Jenkins pipeline failing due to infrastructure securit
 - IMDSv2 not enforced
 
 📸 **Upload Screenshot Here**  
-[ Jenkins Failed Pipeline Screenshot ]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b173161f-cdb3-480c-873e-f74c33e986f5" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/649d5c9f-7196-4dc9-9ad2-35ebbc7577d9" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/19baca05-1b3a-44ba-aacb-7d32350f3137" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d84d4526-9749-4f4f-811a-7c8a6c4e9f07" />
 
-yaml
-Copy code
 
 ---
 
@@ -242,3 +243,4 @@ Copy code
 
 This project showcases a real-world DevOps workflow where infrastructure security is integrated directly into the CI/CD pipeline.  
 It highlights how **AI-assisted remediation** can effectively improve cloud security while maintaining automation and delivery speed.
+
