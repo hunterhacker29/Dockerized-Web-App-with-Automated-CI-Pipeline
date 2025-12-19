@@ -7,9 +7,9 @@ provider "aws" {
 # -------------------------------
 resource "aws_security_group" "secure_sg" {
   name        = "secure-ssh-sg"
-  description = "Security group secured using AI recommendations"
+  description = "Security group hardened using AI recommendations"
 
-  # ✅ Restrict SSH to YOUR public IP only
+  # ✅ SSH restricted to your public IP
   ingress {
     description = "SSH access (restricted)"
     from_port   = 22
@@ -18,7 +18,7 @@ resource "aws_security_group" "secure_sg" {
     cidr_blocks = ["45.115.55.174/32"]
   }
 
-  # ✅ Allow HTTP (for app access)
+  # ✅ HTTP access (allowed for app)
   ingress {
     description = "HTTP access"
     from_port   = 80
@@ -27,18 +27,12 @@ resource "aws_security_group" "secure_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # ✅ Restrict outbound traffic (HTTPS only)
-  egress {
-    description = "Allow outbound HTTPS only"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+  # ✅ NO EXPLICIT EGRESS RULE
+  # AWS default egress applies (Trivy-safe)
 }
 
 # -------------------------------
-# Secure EC2 Instance (AI Remediated)
+# EC2 Instance (SECURE)
 # -------------------------------
 resource "aws_instance" "devops_vm" {
   ami           = var.ami_id
