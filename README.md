@@ -1,226 +1,245 @@
-🎬 MovieMate – Dockerized Web App with Automated CI/CD & AI-Driven Security
+# 🎬 MovieMate – Dockerized Web App with Automated CI/CD & AI-Driven Security
 
-MovieMate is an ad-free OTT-style web application that aggregates movies and TV shows into a single streaming platform.
+MovieMate is an **ad-free OTT-style web application** that aggregates movies and TV shows into a single streaming platform.
 
-This repository demonstrates end-to-end DevOps practices, including:
+This project demonstrates **end-to-end DevOps principles**, including:
+- Application containerization
+- Infrastructure as Code (Terraform)
+- CI/CD automation using Jenkins
+- Infrastructure security scanning with Trivy
+- AI-driven remediation of cloud security vulnerabilities
 
-Dockerized application
+---
 
-Infrastructure as Code using Terraform
+## 📌 Project Overview
 
-CI/CD automation with Jenkins
+**Role:** DevOps Engineer  
+**Goal:** Ensure cloud infrastructure is **secure by default** before deployment.
 
-Infrastructure security scanning using Trivy
+The project covers:
+- Secure cloud provisioning
+- Automated security checks in CI/CD
+- AI-assisted infrastructure hardening
 
-AI-driven remediation of cloud security vulnerabilities
+---
 
-🚀 Live Application
+## ☁️ Cloud Provider Used
 
-🌐 Deployed URL
-👉 https://movieweb-f2893.web.app/
+- **Cloud Platform:** AWS
+- **Services Used:**
+  - EC2 (Virtual Machine)
+  - Security Groups (Firewall rules)
 
-Application Screenshots
+---
 
-<img src="https://github.com/user-attachments/assets/d06cd69c-f079-4637-95f4-aa70322147f7" width="100%" /> <img src="https://github.com/user-attachments/assets/13cb3f84-2215-45f9-aac2-c559dd104549" width="100%" /> <img src="https://github.com/user-attachments/assets/d146f693-89f3-4ffb-81b5-2a03f93e2886" width="100%" />
-✨ Application Features
+## 🛠️ Tools & Technologies
 
-Unified access to movies and TV shows
+### Application Stack
+- **Frontend:** React.js
+- **Backend:** Node.js
+- **Authentication:** Firebase Authentication
+- **Database:** Firebase Realtime Database
+- **Hosting:** Firebase Hosting
 
-Ad-free viewing experience
+### DevOps Stack
+- **Containerization:** Docker
+- **CI/CD:** Jenkins (Docker-based)
+- **Infrastructure as Code:** Terraform
+- **Security Scanner:** Trivy
+- **AI Assistance:** ChatGPT (for security remediation)
 
-Responsive React-based UI
+---
 
-Firebase Authentication (Email/Password + Google OAuth)
+## 🚀 Live Application
 
-User profile management
+🌐 **Deployed URL:**  
+https://movieweb-f2893.web.app/
 
-Dynamic content loading with infinite scroll
+### 📸 Screenshots – Application UI
+*(Attach screenshots below)*
 
-🛠️ Tech Stack
-Application
+- Login Page (Firebase Authentication)
+- Home Page with Movie Cards
 
-Frontend: React.js
+```text
+[Insert Application UI screenshots here]
+🧩 Architecture Overview
+High-Level Flow
 
-Backend: Node.js
-
-Authentication: Firebase Authentication
-
-Database: Firebase Realtime Database
-
-Hosting: Firebase Hosting
-
-DevOps & Cloud
-
-Containerization: Docker
-
-CI/CD: Jenkins (Docker-based)
-
-Infrastructure as Code: Terraform
-
-Security Scanning: Trivy
-
-Cloud Provider: AWS (EC2, Security Groups)
-
-🧩 CI/CD Pipeline Architecture
 Developer
    ↓
 GitHub Repository
    ↓
-Jenkins Pipeline
+Jenkins CI/CD Pipeline
    ├── Checkout Source Code
-   ├── Trivy Infrastructure Security Scan
+   ├── Trivy Security Scan (Terraform)
    └── Terraform Plan (Dry Run)
+🧱 Infrastructure as Code (Terraform)
+Terraform provisions:
 
-🔐 Infrastructure Security (Assignment Focus)
+AWS EC2 instance
+
+Networking via Security Groups
+
 ❌ Initial (Intentionally Insecure Configuration)
+The following vulnerabilities were intentionally introduced:
 
-The Terraform infrastructure was deliberately created with security flaws:
-
-SSH (port 22) open to 0.0.0.0/0
+SSH (22) open to 0.0.0.0/0
 
 Unrestricted outbound traffic
 
-Root block volume not encrypted
+Root disk not encrypted
 
 IMDSv2 not enforced
 
-These vulnerabilities were introduced intentionally to demonstrate detection and remediation.
+Purpose: Demonstrate detection and remediation
 
-🤖 AI-Driven Security Remediation
+🔐 Before Security Report (FAILED Pipeline)
+❌ Jenkins Pipeline – Before Remediation
+📍 Stage: Infrastructure Security Scan
+📍 Tool: Trivy
 
-Trivy security scans were executed inside the Jenkins pipeline.
-Based on the vulnerability report, AI-assisted recommendations were applied to fix the issues.
+Detected Issues:
 
-✅ Security Fixes Applied
-
-SSH access restricted to a specific public IP
-
-Root block storage encryption enabled
-
-IMDSv2 enforced using metadata options
-
-Outbound traffic restricted to HTTPS only
-
-✅ Result
-
-Trivy scan reports zero HIGH or CRITICAL issues
-
-Jenkins pipeline completes successfully
-
-🔁 Jenkins Pipeline Stages
-
-Checkout – Pull source code from GitHub
-
-Infrastructure Security Scan – Trivy scans Terraform files
-
-Terraform Plan – Dry run validation
-
-⚠️ Note:
-terraform apply is intentionally not executed in Jenkins to avoid exposing AWS credentials.
-
-🖼️ Screenshot Evidence (Evaluator Checklist)
-
-This section provides visual proof of application deployment, CI/CD execution, vulnerability detection, and AI-driven remediation.
-
-✅ 1. Application UI – Live Deployment
-
-📍 Section: Live Application
-
-Attached Screenshots
-
-Login page (Firebase Authentication)
-
-Home page with movie cards
-
-✔ Confirms the application is real, functional, and publicly deployed.
-
-❌ 2. Jenkins Pipeline – FAILED (Before Remediation)
-
-📍 Section: Infrastructure Security
-
-Screenshot Shows
-
-Jenkins pipeline execution
-
-Trivy detecting HIGH & CRITICAL issues
-
-Pipeline failure due to insecure Terraform configuration
-
-Detected Issues
-
-SSH open to 0.0.0.0/0
-
-Unrestricted egress
-
-Unencrypted root volume
-
-IMDSv2 disabled
-
-✔ Demonstrates intentional vulnerability (assignment requirement)
-
-📋 3. Trivy Vulnerability Report (Console Output)
-
-📍 Section: AI-Driven Security Remediation
-
-Screenshot Shows
-
-Trivy console output from Jenkins
-
-Vulnerabilities:
-
-AVD-AWS-0107 – Open SSH access
+AVD-AWS-0107 – SSH open to the world
 
 AVD-AWS-0104 – Unrestricted egress
 
-IMDS metadata warnings
+Root volume not encrypted
 
-✔ Covers Core Task #4 requirement
+IMDS metadata risks
+
+📸 Screenshot Required
+
+=
+[Insert Jenkins FAILED pipeline screenshot here]
+📋 Trivy Vulnerability Report (Console Output)
+This satisfies Assignment Requirement – Core Task #4
 
 “Copy the Trivy vulnerability report from Jenkins console”
 
-✅ 4. Jenkins Pipeline – SUCCESS (After Remediation)
+📸 Screenshot Required
 
-📍 Section: AI-Driven Security Remediation
 
-Screenshot Shows
+[Insert Trivy console output screenshot here]
+🤖 AI-Driven Security Remediation (Core Task)
+AI Prompt Used (Mandatory)
+Analyze the Trivy security scan report for Terraform.
+Explain the risks and rewrite the Terraform code to fix all
+HIGH and CRITICAL vulnerabilities following AWS security best practices.
+AI-Identified Risks
+Public SSH exposure enables brute-force attacks
 
-Trivy scan with 0 misconfigurations
+Unrestricted egress allows data exfiltration
+
+Unencrypted disks risk data theft
+
+IMDSv1 enables metadata exploitation
+
+AI-Recommended Fixes Applied
+SSH restricted to specific public IP
+
+Root volume encryption enabled
+
+IMDSv2 enforced
+
+Outbound traffic restricted to HTTPS (443)
+
+✅ After Security Report (SUCCESS Pipeline)
+✅ Jenkins Pipeline – After Remediation
+Results:
+
+Trivy scan: 0 HIGH / CRITICAL issues
 
 Terraform initialized successfully
 
-Jenkins build marked SUCCESS
+Pipeline completed with SUCCESS
 
-⚠️ Terraform plan skipped due to missing AWS credentials (expected behavior)
+📸 Screenshot Required
 
-✔ Confirms AI-recommended fixes resolved all security issues
 
-🔁 5. Terraform Plan Output (Dry Run)
+[Insert Jenkins SUCCESS pipeline screenshot here]
+🔁 Terraform Plan (Dry Run)
+Terraform plan is executed as a dry run.
 
-📍 Section: Jenkins Pipeline Stages
+Status:
 
-Screenshot Shows
+terraform init → SUCCESS
 
-terraform init successful
+terraform plan → Skipped (no AWS credentials in CI)
 
-terraform plan attempted
+📸 Screenshot Required
 
-Message: Plan skipped due to missing AWS credentials
+[Insert Terraform plan output screenshot here]
+⚠ Terraform apply is intentionally skipped to avoid exposing cloud credentials.
 
-✔ Evaluators will NOT penalize this
+🖼️ Required Screenshots Checklist (Evaluator Friendly)
+✅ Application running on public URL
 
-▶️ Run Locally
+❌ Jenkins failed pipeline (before remediation)
+
+📋 Trivy vulnerability report
+
+✅ Jenkins success pipeline (after remediation)
+
+🔁 Terraform plan output
+
+▶️ Run Application Locally
 npm install
 npm start
-
-
 Application runs at:
-👉 http://localhost:3000
+http://localhost:3000
+
+🎥 Video Demonstration (Mandatory)
+📌 5–10 minute screen recording covering:
+
+Jenkins pipeline execution
+
+Trivy security scan
+
+Terraform plan
+
+Application running on public URL
+
+🔗 Video Link:
+
+
+[Insert video recording link here]
+📂 Repository Contents
+Dockerfile
+
+docker-compose.yml
+
+Jenkinsfile
+
+terraform/ (secured version)
+
+README.md (this file)
 
 👤 Author
-
 Advait Jadhav
 
 📌 Conclusion
+This project demonstrates how DevOps + Security + AI can be combined to:
 
-This project showcases a real-world DevOps workflow where infrastructure security is integrated directly into CI/CD pipelines.
-It demonstrates how AI-assisted remediation, automated security scanning, and infrastructure as code can be combined to build secure-by-default cloud systems.
+Prevent insecure cloud deployments
+
+Shift security left into CI/CD
+
+Automatically detect and remediate risks
+
+Maintain secure, automated infrastructure delivery
+
+
+
+---
+
+### ✅ What you should do NOW
+1. Open **README.md** in GitHub
+2. **Replace everything** with the above content
+3. Commit with message:
+Add final README with DevOps architecture, security reports, and AI remediation
+
+
+
+
