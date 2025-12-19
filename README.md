@@ -10,6 +10,44 @@ This project demonstrates **end-to-end DevOps practices**, including:
 - AI-driven remediation of cloud security vulnerabilities
 
 ---
+## Block Diagram 
+┌────────────┐
+│  Developer │
+└─────┬──────┘
+      │ Git Push
+      ▼
+┌──────────────────────┐
+│      GitHub Repo     │
+│  (App + Terraform +  │
+│    Jenkinsfile)      │
+└─────────┬────────────┘
+          │ Webhook / Poll
+          ▼
+┌────────────────────────────┐
+│        Jenkins (Docker)    │
+│                            │
+│  Stage 1: Checkout          │
+│  Stage 2: Trivy Scan        │
+│  Stage 3: Terraform Plan    │
+│                            │
+└───────┬─────────┬──────────┘
+        │         │
+        │         │
+        ▼         ▼
+┌────────────┐  ┌────────────────┐
+│   Trivy    │  │   Terraform     │
+│ Security   │  │  (Dry Run)      │
+│ Scan IaC   │  │                │
+└────────────┘  └────────┬───────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │   AWS Cloud     │
+                 │  (EC2 + SG)     │
+                 │  [Plan Only]    │
+                 └────────────────┘
+
+---
 
 ## 🚀 Live Application
 
@@ -124,3 +162,4 @@ Advait Jadhav
 📌 Conclusion
 This project showcases a real-world DevOps workflow where infrastructure security is integrated into CI/CD pipelines.
 It demonstrates how AI-assisted remediation can improve cloud security while maintaining automated delivery pipelines.
+
