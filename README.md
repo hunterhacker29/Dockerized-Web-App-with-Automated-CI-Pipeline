@@ -273,13 +273,12 @@ It highlights how **AI-assisted remediation** can effectively improve cloud secu
 
 ## ▶️ Steps to Run the Application Locally (React + Firebase)
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 ```bash
 git clone https://github.com/<your-username>/Dockerized-Web-App-with-Automated-CI-Pipeline.git
 cd Dockerized-Web-App-with-Automated-CI-Pipeline
 2️⃣ Install Dependencies
-bash
-Copy code
+
 npm install
 3️⃣ Configure Firebase
 Create a Firebase project and enable:
@@ -290,13 +289,10 @@ Realtime Database
 
 Update Firebase configuration in:
 
-text
-Copy code
 src/firebase/Firebase.jsx
 Example:
 
-js
-Copy code
+
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT.firebaseapp.com",
@@ -307,27 +303,22 @@ const firebaseConfig = {
   appId: "XXXX"
 };
 4️⃣ Start the Application
-bash
-Copy code
+
 npm start
 App will be available at:
 
-arduino
-Copy code
+
 http://localhost:3000
 🐳 Run Using Docker
 Build Docker Image
-bash
-Copy code
+
 docker build -t moviemate-app .
 Run Container
-bash
-Copy code
+
 docker run -p 3000:3000 moviemate-app
 OR using Docker Compose:
 
-bash
-Copy code
+
 docker-compose up --build
 🔁 CI/CD Pipeline (Jenkins)
 Pipeline Stages
@@ -342,19 +333,21 @@ Terraform Plan (Dry Run)
 🛡️ Infrastructure Security Scan (Trivy)
 Manual scan (optional):
 
-bash
-Copy code
+
 trivy config terraform/
 ☁️ Firebase Deployment
-bash
-Copy code
+
 npm run build
 firebase deploy
 Live URL:
-
-arduino
-Copy code
 https://movieweb-f2893.web.app/
+
+### Run Locally
+npm i
+npm start
+
+App will start on you localhost 
+
 
 
 
