@@ -22,6 +22,7 @@ Screenshots:
 <img width="1920" height="1080" alt="Screenshot (610)" src="https://github.com/user-attachments/assets/f8b6a1e6-1664-41ce-a7e5-11a1264cdfb4" />
 <img width="1920" height="1080" alt="Screenshot (611)" src="https://github.com/user-attachments/assets/3be064af-e70d-4680-9a9c-6014559d6442" />
 
+### Video : https://youtu.be/vkzmzLJ-Teo
 
 
 ---
@@ -351,6 +352,7 @@ npm i
 npm start
 
 App will start on you localhost 
+
 
 
 
