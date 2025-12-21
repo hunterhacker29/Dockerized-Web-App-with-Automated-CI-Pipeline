@@ -246,3 +246,118 @@ It highlights how **AI-assisted remediation** can effectively improve cloud secu
 
 
 
+
+
+
+## ⚙️ Requirements
+
+### 🔹 Local System
+- Node.js (v16 or above)
+- npm
+- Git
+- Docker & Docker Compose
+- Terraform
+- Jenkins (Docker-based or local)
+
+### 🔹 Cloud & Services
+- Firebase Account
+  - Authentication (Email/Password + Google OAuth)
+  - Realtime Database
+  - Firebase Hosting
+- AWS Account
+  - EC2
+  - Security Groups
+- GitHub Account
+
+---
+
+## ▶️ Steps to Run the Application Locally (React + Firebase)
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/<your-username>/Dockerized-Web-App-with-Automated-CI-Pipeline.git
+cd Dockerized-Web-App-with-Automated-CI-Pipeline
+2️⃣ Install Dependencies
+bash
+Copy code
+npm install
+3️⃣ Configure Firebase
+Create a Firebase project and enable:
+
+Authentication (Email/Password + Google)
+
+Realtime Database
+
+Update Firebase configuration in:
+
+text
+Copy code
+src/firebase/Firebase.jsx
+Example:
+
+js
+Copy code
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
+};
+4️⃣ Start the Application
+bash
+Copy code
+npm start
+App will be available at:
+
+arduino
+Copy code
+http://localhost:3000
+🐳 Run Using Docker
+Build Docker Image
+bash
+Copy code
+docker build -t moviemate-app .
+Run Container
+bash
+Copy code
+docker run -p 3000:3000 moviemate-app
+OR using Docker Compose:
+
+bash
+Copy code
+docker-compose up --build
+🔁 CI/CD Pipeline (Jenkins)
+Pipeline Stages
+Checkout Source Code
+
+Trivy Infrastructure Security Scan
+
+Terraform Plan (Dry Run)
+
+⚠️ terraform apply is intentionally not executed due to missing AWS credentials in Jenkins.
+
+🛡️ Infrastructure Security Scan (Trivy)
+Manual scan (optional):
+
+bash
+Copy code
+trivy config terraform/
+☁️ Firebase Deployment
+bash
+Copy code
+npm run build
+firebase deploy
+Live URL:
+
+arduino
+Copy code
+https://movieweb-f2893.web.app/
+
+
+
+
+
+
