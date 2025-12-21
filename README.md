@@ -207,17 +207,17 @@ Analyze the following Trivy security scan results for Terraform AWS infrastructu
 ---
 ## 📂 Repository Structure
 
-├── Dockerfile
-├── docker-compose.yml
-├── Jenkinsfile
-├── terraform/
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-│ └── terraform.tfvars
-├── src/
-├── public/
-└── README.md
+##├── Dockerfile
+##├── docker-compose.yml
+##├── Jenkinsfile
+##├── terraform/
+##│ ├── main.tf
+##│ ├── variables.tf
+##│ ├── outputs.tf
+##│ └── terraform.tfvars
+##├── src/
+##├── public/
+##└── README.md
 
 ---
 
@@ -231,6 +231,7 @@ Analyze the following Trivy security scan results for Terraform AWS infrastructu
 
 This project showcases a real-world DevOps workflow where infrastructure security is integrated directly into the CI/CD pipeline.  
 It highlights how **AI-assisted remediation** can effectively improve cloud security while maintaining automation and delivery speed.
+
 
 
 
