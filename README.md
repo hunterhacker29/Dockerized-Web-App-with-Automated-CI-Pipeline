@@ -108,6 +108,8 @@ After remediation:
 ---
 
 ## 🖼️ Screenshots (Mandatory Submission Evidence)
+### Docker Image
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2001384f-247e-4691-b4a7-7c9f5be7ff57" />
 
 ### 1️⃣ Jenkins Pipeline – Initial Failing Scan (Before Remediation)
 
@@ -192,6 +194,13 @@ Analyze the following Trivy security scan results for Terraform AWS infrastructu
 
 
 
+### 6 Firebase Database and app deployment (cloud database)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c63f1007-c35d-46a2-bdd4-78300f4be618" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9891df06-ef35-4f91-a2e9-4575e6837ac7" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c7e5730-0d30-4354-a3e5-149093a9786f" />
+
+
+
 ### 🔹 Summary of Identified Risks
 - Public SSH access allowing brute-force attacks
 - Unencrypted root storage risking data exposure
@@ -207,17 +216,17 @@ Analyze the following Trivy security scan results for Terraform AWS infrastructu
 ---
 ## 📂 Repository Structure
 
-##├── Dockerfile
-##├── docker-compose.yml
-##├── Jenkinsfile
-##├── terraform/
-##│ ├── main.tf
-##│ ├── variables.tf
-##│ ├── outputs.tf
-##│ └── terraform.tfvars
-##├── src/
-##├── public/
-##└── README.md
+├── Dockerfile
+├── docker-compose.yml
+├── Jenkinsfile
+├── terraform/
+│ ├── main.tf
+│ ├── variables.tf
+│ ├── outputs.tf
+│ └── terraform.tfvars
+├── src/
+├── public/
+└── README.md
 
 ---
 
@@ -231,6 +240,7 @@ Analyze the following Trivy security scan results for Terraform AWS infrastructu
 
 This project showcases a real-world DevOps workflow where infrastructure security is integrated directly into the CI/CD pipeline.  
 It highlights how **AI-assisted remediation** can effectively improve cloud security while maintaining automation and delivery speed.
+
 
 
 
