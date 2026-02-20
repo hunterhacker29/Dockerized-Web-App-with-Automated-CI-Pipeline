@@ -360,4 +360,13 @@ App will start on you localhost
 
 
 
+makeing some changes and running jemkins pipeline again 
+
+
+
+
+
+
+
+
 
