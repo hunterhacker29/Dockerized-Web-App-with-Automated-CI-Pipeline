@@ -1,5 +1,34 @@
+provider "aws" {
+  region = "eu-north-1"
+}
+
 # -------------------------------
-# EC2 Instance (SECURE + DOCKER DEPLOYMENT)
+# Security Group
+# -------------------------------
+resource "aws_security_group" "secure_sg" {
+
+  name = "secure-ssh-sg-new"
+
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["45.115.55.174/32"]
+  }
+
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+}
+
+# -------------------------------
+# EC2 Instance
 # -------------------------------
 resource "aws_instance" "devops_vm" {
 
@@ -7,42 +36,20 @@ resource "aws_instance" "devops_vm" {
   instance_type = var.instance_type
   key_name      = var.key_name
 
-  security_groups = [aws_security_group.secure_sg.name]
+  vpc_security_group_ids = [aws_security_group.secure_sg.id]
 
-  # ✅ Enforce IMDSv2
-  metadata_options {
-    http_tokens = "required"
-  }
-
-  # ✅ Encrypt root volume
-  root_block_device {
-    encrypted = true
-  }
-
-  # ✅ Install Docker and Run Your App Automatically
   user_data = <<-EOF
               #!/bin/bash
-
-              # Update system
               yum update -y
-
-              # Install Docker
               amazon-linux-extras install docker -y
-
-              # Start Docker
               systemctl start docker
               systemctl enable docker
-
-              # Pull your Docker image
               docker pull advaithunter/moviemate-app:latest
-
-              # Run container
               docker run -d -p 80:80 advaithunter/moviemate-app:latest
-
               EOF
 
   tags = {
-    Name = "DevOps-Secure-VM"
+    Name = "DevOps-Docker-Server"
   }
 
 }
