@@ -1,13 +1,3 @@
-
-Jenkins **does NOT support backticks ```**. Those are only for ChatGPT / Markdown.
-
----
-
-# ✅ FIXED Jenkinsfile (COPY THIS EXACTLY)
-
-**Replace your entire Jenkinsfile with this:**
-
-```groovy
 pipeline {
     agent any
 
