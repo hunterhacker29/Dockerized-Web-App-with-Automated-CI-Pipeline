@@ -37,14 +37,19 @@ pipeline {
         }
 
         stage('Deploy to AWS') {
-            steps {
-                sh '''
-                cd terraform
-                terraform init -upgrade
-                terraform apply -auto-approve
-                '''
-            }
+        steps {
+            sh '''
+            cd terraform
+    
+            rm -rf .terraform
+            rm -f terraform.lock.hcl
+    
+            terraform init
+            terraform apply -auto-approve
+            '''
         }
+    }
 
     }
 }
+
