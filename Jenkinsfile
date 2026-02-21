@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent any
 
@@ -43,6 +41,7 @@ pipeline {
                 sh '''
                 cd terraform
                 terraform init
+                terraform plan
                 terraform apply -auto-approve
                 '''
             }
@@ -50,4 +49,3 @@ pipeline {
 
     }
 }
-
