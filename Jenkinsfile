@@ -38,15 +38,15 @@ pipeline {
             }
         }
 
-        // stage('Deploy to AWS') {
-        //     steps {
-        //         sh '''
-        //         cd terraform
-        //         terraform init
-        //         terraform apply -auto-approve
-        //         '''
-        //     }
-        //}
+        stage('Deploy to AWS') {
+            steps {
+                sh '''
+                cd terraform
+                terraform init
+                terraform apply -auto-approve
+                '''
+            }
+        }
 
     }
 }
