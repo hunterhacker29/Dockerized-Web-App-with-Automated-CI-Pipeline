@@ -36,25 +36,26 @@ pipeline {
             }
         }
 
-        stage('Deploy to AWS') {
-            steps {
-                sh '''
-                cd terraform
+        // stage('Deploy to AWS') {
+        //     steps {
+        //         sh '''
+        //         cd terraform
         
-                echo "Cleaning old terraform files..."
-                rm -rf .terraform
-                rm -f terraform.lock.hcl
+        //         echo "Cleaning old terraform files..."
+        //         rm -rf .terraform
+        //         rm -f terraform.lock.hcl
         
-                echo "Running terraform init..."
-                terraform init
+        //         echo "Running terraform init..."
+        //         terraform init
         
-                echo "Running terraform apply..."
-                terraform apply -auto-approve
-                '''
-                }
-            }
+        //         echo "Running terraform apply..."
+        //         terraform apply -auto-approve
+        //         '''
+        //         }
+        //     }
 
     }
 }
+
 
 
