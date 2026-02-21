@@ -175,6 +175,9 @@ Final Trivy scan output showing zero critical or high-severity vulnerabilities a
 
 
 
+### System Architecure 
+<img width="784" height="496" alt="image" src="https://github.com/user-attachments/assets/a95743e4-231f-4cee-986e-30597ac30625" />
+<img width="797" height="517" alt="image" src="https://github.com/user-attachments/assets/b17eb2aa-6f10-49a4-b74f-ba9df15e495e" />
 
 ---
 
@@ -361,6 +364,7 @@ App will start on you localhost
 
 
 makeing some changes and running jemkins pipeline again 
+
 
 
 
