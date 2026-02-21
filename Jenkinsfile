@@ -40,8 +40,7 @@ pipeline {
             steps {
                 sh '''
                 cd terraform
-                terraform init
-                terraform plan
+                terraform init -upgrade
                 terraform apply -auto-approve
                 '''
             }
